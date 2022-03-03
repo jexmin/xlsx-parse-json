@@ -22,7 +22,8 @@ exports.onFileSelection = (file, { showNullProperties = false, hideEmptyRows = t
 const onLoadEvent = (binary, reader, hideEmptyRows, showNullProperties) => {
 	const parsedXls = {};
 	var workbook = sheetJs.read(binary, {
-		type: 'binary'
+		type: 'binary',
+		dateNF: 'MM/DD/YYYY'
 	});
 	const sheetNames = getSheetNames(workbook);
 
